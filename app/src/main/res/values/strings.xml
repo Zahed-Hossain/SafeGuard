@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SafeGuard</string>
+    <string name="tagline">Install Once. Stay Protected.</string>
+    <string name="status_active">PROTECTION ACTIVE</string>
+    <string name="status_active_desc">Your device is protected.</string>
+    <string name="status_disabled">PROTECTION DISABLED</string>
+    <string name="status_disabled_desc">Protection is paused. Tap to enable filtering.</string>
+    <string name="blocked_today">Blocked Today</string>
+    <string name="blocked_this_week">Blocked This Week</string>
+    <string name="blocked_this_month">Blocked This Month</string>
+    <string name="view_statistics">VIEW STATISTICS</string>
+    <string name="settings">SETTINGS</string>
+    <string name="enable_protection">ENABLE PROTECTION</string>
+    <string name="disable_protection">PAUSE PROTECTION</string>
+    <string name="onboarding_headline">Protect your device from adult and inappropriate websites.</string>
+    <string name="vpn_explanation">SafeGuard uses Android\'s VPN permission to filter network connections locally and block known adult websites.</string>
+    <string name="btn_continue">CONTINUE</string>
+    <string name="website_blocked_title">Website Blocked</string>
+    <string name="website_blocked_subtitle">This content was blocked by SafeGuard to protect your digital wellbeing.</string>
+    <string name="category_adult">Adult Content</string>
+    <string name="category_gambling">Gambling</string>
+    <string name="category_malicious">Malware &amp; Phishing</string>
+    <string name="vpn_notification_channel_name">SafeGuard Protection</string>
+    <string name="vpn_notification_channel_desc">Shows ongoing protection status</string>
+    <string name="vpn_notification_title">SAFEGUARD</string>
+    <string name="vpn_notification_text">Protection is active</string>
+    <string name="error_vpn_permission_denied">VPN permission was denied. SafeGuard requires VPN permission to filter inappropriate content locally on your device.</string>
+    <string name="error_vpn_already_active">SafeGuard protection is already active.</string>
+    <string name="error_vpn_service_stopped">SafeGuard VPN service has stopped.</string>
+    <string name="error_another_vpn_active">Another VPN is currently active on this device. Android allows only one active VPN at a time. Please disconnect the other VPN first.</string>
+    <string name="error_network_unavailable">No network connection available. Please connect to Wi-Fi or mobile data to enable protection.</string>
+    <string name="error_vpn_connection_failed">Unable to establish VPN connection. Please verify system permissions and try again.</string>
+    <string name="status_error">PROTECTION ERROR</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="retry">Retry</string>
+</resources>
+

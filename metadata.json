@@ -1,0 +1,7 @@
+{
+  "name": "SafeGuard",
+  "description": "Privacy-preserving Android safety application designed to block adult, pornographic, and inappropriate websites. Install Once. Stay Protected.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

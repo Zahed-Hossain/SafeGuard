@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Shield Glow -->
+    <path
+        android:pathData="M54,20 L82,32 C82,56 68,76 54,84 C40,76 26,56 26,32 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="26"
+                android:startY="20"
+                android:endX="82"
+                android:endY="84"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#00E5FF" />
+                <item android:offset="1.0" android:color="#00B0FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Inner Shield Body -->
+    <path
+        android:pathData="M54,24 L78,34 C78,54 66,72 54,79 C42,72 30,54 30,34 Z"
+        android:fillColor="#0A192F" />
+    <!-- Filter Funnel / Clean Geometric Shield Emblem -->
+    <path
+        android:pathData="M40,38 L68,38 L58,52 L58,62 L50,66 L50,52 Z"
+        android:fillColor="#00E5FF" />
+    <!-- Center Protection Checkmark / Key node -->
+    <path
+        android:pathData="M49,46 L53,50 L61,42"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>
