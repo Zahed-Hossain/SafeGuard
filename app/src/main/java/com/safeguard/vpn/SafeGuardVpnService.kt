@@ -240,7 +240,7 @@ class SafeGuardVpnService : VpnService() {
                             app?.preferencesRepository?.incrementBlockedStats(category)
 
                             // Respect user privacy setting: Store Blocked Domain Names is OFF by default
-                            val storeDomains = app?.preferencesRepository?.storeBlockedDomains?.first() ?: false
+                            val storeDomains = app?.preferencesRepository?.storeBlockedDomainNames?.first() ?: false
                             if (storeDomains) {
                                 app?.blocklistRepository?.logBlockEvent(category, blockedDomain)
                             }
