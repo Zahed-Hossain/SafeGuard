@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeGuard — Android Content Protection & Safety Engine</title>
+  <meta name="description" content="SafeGuard is an on-device Android content protection and privacy-first DNS filtering application." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0F6B58;
+      --primary-dark: #084035;
+      --primary-light: #E6F4F1;
+      --accent: #10B981;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border: #E2E8F0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, #064E3B 0%, #0F6B58 100%);
+      color: white;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #34D399;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #34D399;
+    }
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      color: #D1FAE5;
+      font-weight: 500;
+    }
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+    .btn-primary:hover {
+      background: #F1F5F9;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    .container {
+      max-width: 900px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+    .alert-box {
+      background: #FEF3C7;
+      border-left: 5px solid #F59E0B;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      color: #92400E;
+    }
+    .alert-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #78350F;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .feature-item {
+      padding: 1.25rem;
+      background: #F8FAFC;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-main);
+    }
+    .feature-desc {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+    }
+    .code-block {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 1.25rem;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    ol.steps {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+    ol.steps li {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+    ol.steps li strong {
+      color: var(--primary-dark);
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      SafeGuard Android Security App
+    </div>
+    <h1>SafeGuard</h1>
+    <p class="subtitle">
+      একটি শক্তিশালী ও প্রাইভেসি-ফার্স্ট অন-ডিভাইস অ্যান্ড্রয়েড কন্টেন্ট ফিল্টারিং অ্যাপ্লিকেশন (Kotlin & Jetpack Compose)।
+    </p>
+    <div class="cta-group">
+      <a href="https://github.com" class="btn btn-primary">GitHub Repository</a>
+      <a href="README.md" class="btn btn-secondary">README Documentation</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="alert-box">
+      <h3>⚠️ গিটহবে এটি সরাসরি ওপেন না হওয়ার কারণ:</h3>
+      <p>
+        <strong>SafeGuard কোনো সাধারণ ওয়েবসাইট বা HTML প্রজেক্ট নয়।</strong> এটি একটি পূর্ণাঙ্গ <strong>Native Android Application (Android App)</strong> যা Kotlin, Android VpnService এবং Jetpack Compose দিয়ে তৈরি। গিটহাব পেজেস (GitHub Pages) বা ওয়েব হোস্টিং সার্ভিসগুলো সাধারণত ব্রাউজারে রান করানোর জন্য <code>index.html</code> ফাইল খোঁজে। কিন্তু অ্যান্ড্রয়েড অ্যাপ ব্রাউজারে নয়, সরাসরি অ্যান্ড্রয়েড ফোন বা Android Studio-তে চালাতে হয়।
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>📱 কীভাবে অ্যাপটি চালু বা ব্যবহার করবেন?</h2>
+
+      <ol class="steps">
+        <li>
+          <strong>১. Android Studio দিয়ে ওপেন করুন:</strong><br/>
+          আপনার কম্পিউটারে Android Studio ওপেন করে <code>File &rarr; Open</code> সিলেক্ট করুন এবং এই প্রজেক্টের রুট ফোল্ডারটি বেছে নিন। Gradle স্বয়ংক্রিয়ভাবে সমস্ত ডিপেনডেন্সি সিঙ্ক করবে।
+        </li>
+        <li>
+          <strong>২. এমুলেটর বা সরাসরি মোবাইলে রান করুন:</strong><br/>
+          আপনার অ্যান্ড্রয়েড ফোন USB কেবল দিয়ে কানেক্ট করুন অথবা Android Studio-র ভার্চুয়াল এমুলেটর সিলেক্ট করে <strong>Run (Shift + F10)</strong> বাটনে ক্লিক করুন।
+        </li>
+        <li>
+          <strong>৩. সরাসরি APK বিল্ড করতে চাইলে (Terminal / CMD):</strong>
+          <div class="code-block">
+# Debug APK তৈরি করার কমান্ড:
+./gradlew assembleDebug
+
+# বিল্ড হওয়া APK এই লোকেশনে পাওয়া যাবে:
+app/build/outputs/apk/debug/app-debug.apk
+          </div>
+          এই APK ফাইলটি আপনার ফোনে পাঠিয়ে সরাসরি ইনস্টল করে ব্যবহার করতে পারবেন।
+        </li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>🛡️ SafeGuard-এর মূল বৈশিষ্ট্যসমূহ</h2>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">১০০% প্রাইভেসি-ফার্স্ট</div>
+          <div class="feature-desc">কোনো ক্লাউড বা থার্ড-পার্টি সার্ভারে ডাটা যায় না। সব ফিল্টারিং সরাসরি ফোনের লোকাল VPN লুপব্যাকে ঘটে।</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">দ্রুত গতির DNS ফিল্টারিং</div>
+          <div class="feature-desc">এডাল্ট, পর্নোগ্রাফি ও ক্ষতিকারক ৫০,০০০+ ডোমেইন সাব-মিলিমিটারে স্বয়ংক্রিয়ভাবে ব্লক করে।</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-title">এনফোর্সড SafeSearch</div>
+          <div class="feature-desc">Google, Bing, DuckDuckGo এবং Yahoo সার্চ ইঞ্জিনে কড়া SafeSearch বাধ্যতামূলক করে।</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔐</div>
+          <div class="feature-title">সুরক্ষিত পিন (PIN) লক</div>
+          <div class="feature-desc">PBKDF2/SHA-256 এনক্রিপ্ট করা পিন ছাড়া কেউ প্রটেকশন বন্ধ বা পরিবর্তন করতে পারবে না।</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    SafeGuard &copy; 2026. Built with Kotlin & Jetpack Compose for Android.
+  </footer>
+
+</body>
+</html>
